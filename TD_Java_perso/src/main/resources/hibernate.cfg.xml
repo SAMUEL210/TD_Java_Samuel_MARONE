@@ -6,8 +6,9 @@
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.password">langagecwane2016.</property>
-        <property name="hibernate.connection.url">jdbc:mysql://mysql-simarone.alwaysdata.net/simarone_TdPersoJavaonzejuin</property>
+        <property name="hibernate.connection.url">jdbc:mysql://mysql-simarone.alwaysdata.net/simarone_tdpersojavaonzejuin</property>
         <property name="hibernate.connection.username">simarone</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <mapping class="com.Model.Salarie" />
     </session-factory>
 </hibernate-configuration>
