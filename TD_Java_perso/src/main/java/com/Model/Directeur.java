@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -25,6 +26,10 @@ public class Directeur {
 	
 	@Column(name = "prenom", nullable = true, unique = false, length = 50)
 	private String prenom;
+	
+	@OneToOne(mappedBy = "hotel_id")
+	private Hotel hotel;
+
 
 	public Directeur() {
 		super();
@@ -60,6 +65,14 @@ public class Directeur {
 
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
+	}
+	
+	public Hotel getHotel() {
+		return hotel;
+	}
+
+	public void setHotel(Hotel hotel) {
+		this.hotel = hotel;
 	}
 	
 
