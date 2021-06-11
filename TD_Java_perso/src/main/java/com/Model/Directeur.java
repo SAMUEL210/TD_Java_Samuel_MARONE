@@ -12,8 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Salarie")
-public class Salarie {
+@Table(name = "Directeur")
+public class Directeur {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,28 +25,17 @@ public class Salarie {
 	
 	@Column(name = "prenom", nullable = true, unique = false, length = 50)
 	private String prenom;
-	
-	@Column(name = "salaire", nullable = true, unique = false)
-	private Double salaire;
-	
-	@Column(name = "experience", nullable = true, unique = false, length = 11)
-	private int experience;
-	
-	@ManyToOne
-	@JoinColumn(name="directeur_id")
-	private Directeur directeur;
 
-	
-	public Salarie() {
+	public Directeur() {
 		super();
 	}
 
-	public Salarie(String nom, String prenom, Double salaire, int experience) {
+	public Directeur(String nom, String prenom) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
-		this.salaire = salaire;
-		this.experience = experience;
+
+
 	}
 
 	public int getId() {
@@ -72,31 +61,6 @@ public class Salarie {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-
-	public Double getSalaire() {
-		return salaire;
-	}
-
-	public void setSalaire(Double salaire) {
-		this.salaire = salaire;
-	}
-
-	public int getExperience() {
-		return experience;
-	}
-
-	public void setExperience(int experience) {
-		this.experience = experience;
-	}
-
-	public Directeur getDirecteur() {
-		return directeur;
-	}
-
-	public void setDirecteur(Directeur directeur) {
-		this.directeur = directeur;
-	}
-	
 	
 
 }

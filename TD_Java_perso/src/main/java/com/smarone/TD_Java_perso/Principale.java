@@ -6,30 +6,30 @@ import java.util.Set;
 
 import org.hibernate.Session;
 
+import com.Model.Directeur;
 import com.Model.Salarie;
+import com.Services.DirecteurServices;
 import com.Services.SalarieServices;
 
 public class Principale {
 
 	public static void main(String[] args) {
 		
-		SalarieServices cs = new SalarieServices();
+		SalarieServices Ss = new SalarieServices();
+		DirecteurServices Sd = new DirecteurServices();
 
 		Salarie s1 = new Salarie("MARONE", "Samuel ibou", 5000.00, 1);
 		
-//		Produit p1 = new Produit("Samsung S20", "S2020", "01/03/2021", 899.99, "Smartphone Samsung S20 appareil photo 24Mpx");
-//		Produit p2 = new Produit("Iphone I12", "I1212", "01/04/2021", 999.99, "Smartphone Apple Iphone I12...");
-//		
-//		Set<Produit> listeP = new HashSet<Produit>();
-//		listeP.add(p1);
-//		listeP.add(p2);
-//		
-//		c1.setProduits(listeP);
+		Directeur d1 = new Directeur("James", "Gordon");
+		
+		s1.setDirecteur(d1);
 		
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		session.beginTransaction();
 		
-		cs.create(s1, session);
+		Sd.create(d1, session);
+
+		Ss.create(s1, session);
 		
 ////		cs.delete(session, 3);
 ////		c1.setPrenom("Paul");
