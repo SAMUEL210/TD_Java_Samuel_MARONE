@@ -37,7 +37,7 @@ public class SalarieServices implements Serializable {
 	
 	public List<Salarie> findAll(Session s)
 	{
-		Query q = s.createQuery("from Client");
+		Query q = s.createQuery("from Salarie");
 		List<Salarie> listeS = q.list();
 		
 		return listeS;

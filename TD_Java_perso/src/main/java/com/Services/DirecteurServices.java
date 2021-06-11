@@ -38,7 +38,7 @@ public class DirecteurServices implements Serializable {
 	
 	public List<Directeur> findAll(Session s)
 	{
-		Query q = s.createQuery("from Client");
+		Query q = s.createQuery("from Directeur");
 		List<Directeur> listeD = q.list();
 		
 		return listeD;
