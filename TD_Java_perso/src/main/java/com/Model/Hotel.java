@@ -1,10 +1,13 @@
 package com.Model;
 
+import com.Model.Directeur;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -26,7 +29,8 @@ public class Hotel {
 	@Column(name = "telephone", nullable = true, unique = false, length = 10)
 	private String telepehone;
 	
-	@OneToOne(mappedBy = "directeur_id")
+	@OneToOne
+	@JoinColumn(name="directeur_id")
 	private Directeur directeur;
 
 	public Hotel() {

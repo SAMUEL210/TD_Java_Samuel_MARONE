@@ -1,35 +1,36 @@
 package com.smarone.TD_Java_perso;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 import org.hibernate.Session;
 
 import com.Model.Directeur;
+import com.Model.Hotel;
 import com.Model.Salarie;
 import com.Services.DirecteurServices;
+import com.Services.HotelServices;
 import com.Services.SalarieServices;
 
 public class Principale {
 
 	public static void main(String[] args) {
 		
-		SalarieServices Ss = new SalarieServices();
-		DirecteurServices Sd = new DirecteurServices();
-
-		Salarie s1 = new Salarie("MARONE", "Samuel ibou", 5000.00, 1);
-		
-		Directeur d1 = new Directeur("James", "Gordon");
-		
-		s1.setDirecteur(d1);
-		
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		session.beginTransaction();
 		
-		Sd.create(d1, session);
+		SalarieServices Ss = new SalarieServices();
+		DirecteurServices Ds = new DirecteurServices();
+		HotelServices Hs = new HotelServices();
 
-		Ss.create(s1, session);
+		Salarie s1 = new Salarie("Warning", "Thomson ", 2500.00, 6);
+		
+		Directeur d1 = new Directeur("MARONE", "Joel");
+		
+		Hotel h1 = new Hotel("Hotel 5 Etoile", "39 Rue de la Présidence", "04000400");
+		
+		h1.setDirecteur(d1);
+		d1.setHotel(h1);
+		Hs.create(h1, session);
+		Ds.create(d1, session);
+		
 		
 ////		cs.delete(session, 3);
 ////		c1.setPrenom("Paul");

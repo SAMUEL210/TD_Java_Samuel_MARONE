@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -27,7 +26,8 @@ public class Directeur {
 	@Column(name = "prenom", nullable = true, unique = false, length = 50)
 	private String prenom;
 	
-	@OneToOne(mappedBy = "hotel_id")
+	@OneToOne
+	@JoinColumn(name="hotel_id")
 	private Hotel hotel;
 
 

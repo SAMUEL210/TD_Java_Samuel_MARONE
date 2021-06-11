@@ -3,13 +3,10 @@ package com.Services;
 import java.io.Serializable;
 import java.util.List;
 
-import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
 import com.Model.Directeur;
-import com.Model.Salarie;
-import com.smarone.TD_Java_perso.HibernateUtil;
 
 public class DirecteurServices implements Serializable {
 	
